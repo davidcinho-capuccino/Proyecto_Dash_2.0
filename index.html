@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div id="loader"></div>
@@ -21,8 +23,11 @@
     <div id="main-content">
         <div class="header">
             <div>
-                <h1 id="display-title" style="margin:0; font-size: 1.8rem; color: var(--w-azul-oscuro); letter-spacing: 1px;">TOP GRADING</h1>
-                <span id="display-subtitle" style="color: var(--w-verde-teal); font-size: 0.95rem; font-weight: bold; display: block; margin-top: 5px;"></span>
+                <h1 id="display-title"
+                    style="margin:0; font-size: 1.8rem; color: var(--w-azul-oscuro); letter-spacing: 1px;">TOP GRADING
+                </h1>
+                <span id="display-subtitle"
+                    style="color: var(--w-verde-teal); font-size: 0.95rem; font-weight: bold; display: block; margin-top: 5px;"></span>
             </div>
             <img src="logowaposatboton.png" height="40" onclick="showMainPanel()" style="cursor:pointer">
         </div>
@@ -30,16 +35,20 @@
         <div id="view-main" class="view-section active">
             <div class="card" style="height: 100%; display: flex; flex-direction: column;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                    <h2 style="margin:0; font-size: 1.1rem; color: var(--w-azul-oscuro);">Productividad vs Desempeño</h2>
+                    <h2 style="margin:0; font-size: 1.1rem; color: var(--w-azul-oscuro);">Productividad vs Desempeño
+                    </h2>
                     <div>
                         <label style="font-weight:bold; font-size:0.9rem;">Semana: </label>
-                        <select id="semana-select" style="padding: 5px 12px; border-radius: 5px; border: 1px solid var(--w-azul-oscuro); font-weight: bold;" onchange="updateScatterChart()"></select>
+                        <select id="semana-select"
+                            style="padding: 5px 12px; border-radius: 5px; border: 1px solid var(--w-azul-oscuro); font-weight: bold;"
+                            onchange="updateScatterChart()"></select>
                     </div>
                 </div>
                 <div class="chart-layout">
                     <div class="chart-main-container"><canvas id="scatterChart"></canvas></div>
                     <div class="legend-side">
-                        <strong style="font-size: 0.8rem; display: block; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">COLABORADORES:</strong>
+                        <strong
+                            style="font-size: 0.8rem; display: block; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">COLABORADORES:</strong>
                         <div id="legend-list"></div>
                     </div>
                 </div>
@@ -50,26 +59,43 @@
             <div class="dashboard-grid">
                 <div class="left-col">
                     <div class="card cal-card">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                            <button onclick="moverMes(-1)" style="background:none; border:none; color:white; cursor:pointer;">❮</button>
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <button onclick="moverMes(-1)"
+                                style="background:none; border:none; color:white; cursor:pointer;">❮</button>
                             <span id="cal-mes" style="font-weight:bold; font-size: 1.1rem;">Enero 2026</span>
-                            <button onclick="moverMes(1)" style="background:none; border:none; color:white; cursor:pointer;">❯</button>
+                            <button onclick="moverMes(1)"
+                                style="background:none; border:none; color:white; cursor:pointer;">❯</button>
                         </div>
                         <div class="cal-grid" id="cal-cuerpo"></div>
                     </div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <div class="card" style="text-align: center; padding: 10px;"><small>AMONESTACIONES</small><div id="txt-amon" style="font-size: 1.8rem; font-weight: 900; color: #e53935;">0</div></div>
-                        <div class="card" style="text-align: center; padding: 10px;"><small>ESTRELLAS</small><div id="txt-estrellas" style="font-size: 1.8rem; font-weight: 900; color: var(--w-verde-lima);">0</div></div>
+                        <div class="card" style="text-align: center; padding: 10px;"><small>AMONESTACIONES</small>
+                            <div id="txt-amon" style="font-size: 1.8rem; font-weight: 900; color: #e53935;">0</div>
+                        </div>
+                        <div class="card" style="text-align: center; padding: 10px;"><small>ESTRELLAS</small>
+                            <div id="txt-estrellas"
+                                style="font-size: 1.8rem; font-weight: 900; color: var(--w-verde-lima);">0</div>
+                        </div>
                     </div>
                 </div>
-                <div class="card"><strong>Puntualidad</strong><div class="chart-small-container"><canvas id="chart1"></canvas></div></div>
-                <div class="card"><strong>Autoaprendizaje</strong><div class="chart-small-container"><canvas id="chart2"></canvas></div></div>
-                <div class="card"><strong>Feedback</strong><div class="chart-small-container"><canvas id="chart3"></canvas></div></div>
-                <div class="card"><strong>Calidad QQC</strong><div class="chart-small-container"><canvas id="chart4"></canvas></div></div>
+                <div class="card"><strong>Puntualidad</strong>
+                    <div class="chart-small-container"><canvas id="chart1"></canvas></div>
+                </div>
+                <div class="card"><strong>Autoaprendizaje</strong>
+                    <div class="chart-small-container"><canvas id="chart2"></canvas></div>
+                </div>
+                <div class="card"><strong>Feedback</strong>
+                    <div class="chart-small-container"><canvas id="chart3"></canvas></div>
+                </div>
+                <div class="card"><strong>Calidad QQC</strong>
+                    <div class="chart-small-container"><canvas id="chart4"></canvas></div>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
